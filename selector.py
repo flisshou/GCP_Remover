@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import shlex
 from subprocess import PIPE, Popen
 
 
@@ -17,7 +18,7 @@ class Selector:
         self.list_files()
     
     def list_files(self):
-        process = Popen(args=self.command, stdout=PIPE, shell=True)
+        process = Popen(args=shlex.split(self.command), stdout=PIPE)
         stdout, stderr = process.communicate()
         self.videos = stdout.decode('utf-8').split('\n')
 
