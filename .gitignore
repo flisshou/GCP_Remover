@@ -1,0 +1,13 @@
+# Logs
+*.log
+TestLogs/
+
+# Idea
+.idea/
+
+# Mac OS
+.DS_Store
+
+# vim Swap Files
+*.swp
+
